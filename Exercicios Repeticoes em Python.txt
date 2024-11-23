@@ -10,3 +10,53 @@ print(f"\nTabuada de {numero}:")
 for i in range(1, 11):
     resultado = numero * i
     print(f"{numero} x {i} = {resultado}")
+--------------------------------
+Exercício 2
+Faça um programa que o usuário irá digitar 10 números e você irá mostrar:
+--------------------------------
+
+Qual foi o menor valor
+Qual foi o maior valor
+Qual a média dos valores
+
+# Inicializa uma lista para armazenar os números
+numeros = []
+
+# Pede para o usuário digitar 10 números
+for i in range(10):
+    numero = float(input(f"Digite o número {i+1}: "))
+    numeros.append(numero)
+
+# Calcula o menor valor, o maior valor e a média
+menor_valor = min(numeros)
+maior_valor = max(numeros)
+media = sum(numeros) / len(numeros)
+
+# Exibe os resultados
+print("\nResultados:")
+print(f"Menor valor: {menor_valor}")
+print(f"Maior valor: {maior_valor}")
+print(f"Média dos valores: {media}")
+-------------------------------
+Exercício 3
+Faça um programa que calcula a Sequência de Fibonacci de N números, onde N é dado pelo usuário.
+
+Essa sequência é construída começando com os números 0 e 1. O próximo número da sequência é sempre a soma dos 2 anteriores.
+
+Sequência: 0 - 1 - 1 - 2 - 3 - 5 - 8 - 13 - 21 - ...
+
+--------------------------------
+# Solicita ao usuário o número de termos para a sequência de Fibonacci
+n = int(input("Digite o número de termos da sequência de Fibonacci: "))
+
+# Inicializa os dois primeiros termos da sequência
+fibonacci = [0, 1]
+
+# Calcula os termos restantes da sequência até alcançar N termos
+for i in range(2, n):
+    proximo = fibonacci[i-1] + fibonacci[i-2]
+    fibonacci.append(proximo)
+
+# Exibe a sequência de Fibonacci com N termos
+print("\nSequência de Fibonacci:")
+print(" - ".join(map(str, fibonacci[:n])))
